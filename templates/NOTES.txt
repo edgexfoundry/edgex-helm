@@ -1,0 +1,2 @@
+Please wait for several minutes for EdgeX deployment to complete.
+Consult README.md for usage instructions.
