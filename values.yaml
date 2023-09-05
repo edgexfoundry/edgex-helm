@@ -24,6 +24,7 @@ expose:
       mqttexport: ClusterIP
       httpexport: ClusterIP
       appsample: ClusterIP
+      apprecordreplay: ClusterIP
       metricsinfluxdb: ClusterIP
       rfidllrpinventory: ClusterIP
       externalmqtttrigger: ClusterIP
@@ -69,6 +70,7 @@ edgex:
       mqttexport: edgex-app-mqtt-export
       httpexport: edgex-app-http-export
       appsample: edgex-app-sample
+      apprecordreplay: edgex-app-record-replay
       metricsinfluxdb: edgex-app-metrics-influxdb
       rfidllrpinventory: edgex-app-rfid-llrp-inventory
       externalmqtttrigger: edgex-app-external-mqtt-trigger
@@ -132,6 +134,10 @@ edgex:
         repository: edgexfoundry/app-service-configurable
         tag: "3.0.0"
         pullPolicy: IfNotPresent
+      apprecordreplay:
+        repository: nexus3.edgexfoundry.org:10004/app-record-replay
+        tag: latest
+        pullPolicy: Always
       metricsinfluxdb:
         repository: edgexfoundry/app-service-configurable
         tag: "3.0.0"
@@ -256,6 +262,7 @@ edgex:
       mqttexport: 59703
       httpexport: 59704
       appsample: 59700
+      apprecordreplay: 59712
       metricsinfluxdb: 59707
       rfidllrpinventory: 59711
       externalmqtttrigger: 59706
@@ -310,6 +317,7 @@ edgex:
       mqttexport: 0
       httpexport: 0
       appsample: 0
+      apprecordreplay: 0
       metricsinfluxdb: 0
       rfidllrpinventory: 0
       externalmqtttrigger: 0
@@ -422,6 +430,14 @@ edgex:
           cpu: 0.5
           memory: 256Mi
       appsample:
+        enforceLimits: false
+        limits:
+          cpu: 1
+          memory: 512Mi
+        requests:
+          cpu: 0.5
+          memory: 256Mi
+      apprecordreplay:
         enforceLimits: false
         limits:
           cpu: 1

@@ -35,6 +35,10 @@ edgex:
         repository: nexus3.edgexfoundry.org:10004/app-service-configurable
         tag: latest
         pullPolicy: Always
+      apprecordreplay:
+        repository: nexus3.edgexfoundry.org:10004/app-record-replay
+        tag: latest
+        pullPolicy: Always
       metricsinfluxdb:
         repository: nexus3.edgexfoundry.org:10004/app-service-configurable
         tag: latest
