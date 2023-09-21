@@ -318,6 +318,18 @@ If everything was done correctly, the output will look like:
 {"apiVersion":"v3","version":"3.0.0-dev.137","serviceName":"core-data"}
 ```
 
+### Consul Authentication Tokens
+
+Consul has its own authentication mechanism.
+EdgeX saves a privielged token away when it sets up Consul's ACL mechanism.
+Use the following boilerplate code to retrieve it:
+
+```sh
+kubectl exec -ti edgex-core-consul-5b5cb7bd85-p26wc -- sh -c 'cat $STAGEGATE_REGISTRY_ACL_MANAGEMENTTOKENPATH | jq -r ".SecretID"'
+```
+
+Replace `edgex-core-consul-5b5cb7bd85-p26wc` with the specific pod instance of the running Consul.
+
 
 ### Configuring Port Bindings
 
