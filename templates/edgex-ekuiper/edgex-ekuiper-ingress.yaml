@@ -21,7 +21,7 @@ spec:
     http:
       paths:
       - path: /rules-engine/(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: {{.Values.edgex.app.ekuiper}}

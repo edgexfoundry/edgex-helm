@@ -21,7 +21,7 @@ spec:
     http:
       paths:
       - path: /support-scheduler/(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: {{.Values.edgex.app.support.scheduler}}
