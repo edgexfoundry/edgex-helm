@@ -2,6 +2,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+{{- if not .Values.edgex.security.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -15,3 +16,4 @@ spec:
   selector:
     org.edgexfoundry.service: {{.Values.edgex.app.ui}}
   type: {{.Values.expose.type.ui}}
+{{- end }}
