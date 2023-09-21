@@ -21,7 +21,7 @@ spec:
     http:
       paths:
       - path: /core-consul/(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: {{.Values.edgex.app.consul}}

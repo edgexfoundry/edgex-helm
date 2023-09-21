@@ -21,7 +21,7 @@ spec:
     http:
       paths:
       - path: /core-command/(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: {{.Values.edgex.app.core.command}}

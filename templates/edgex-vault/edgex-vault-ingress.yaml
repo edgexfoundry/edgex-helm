@@ -21,14 +21,14 @@ spec:
     http:
       paths:
       - path: /vault/(v1/auth/userpass/login/.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: {{.Values.edgex.app.vault}}
             port:
               name: http
       - path: /vault/(v1/identity/oidc/token/.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: {{.Values.edgex.app.vault}}

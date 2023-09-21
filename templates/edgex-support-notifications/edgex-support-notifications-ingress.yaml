@@ -21,7 +21,7 @@ spec:
     http:
       paths:
       - path: /support-notifications/(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: {{.Values.edgex.app.support.notifications}}
