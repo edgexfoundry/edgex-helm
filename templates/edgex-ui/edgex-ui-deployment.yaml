@@ -2,7 +2,6 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-{{- if not .Values.edgex.security.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -40,6 +39,8 @@ spec:
           hostIP: {{.Values.edgex.hostPortExternalBind}}
         {{- end}}
         env:
+        - name: SERVICEOPTIONS_PROXYMODE
+          value: direct
         - name: EDGEX_SECURITY_SECRET_STORE
       {{- if .Values.edgex.security.enabled }}
           value: "true"
@@ -75,4 +76,3 @@ spec:
       securityContext:
         runAsUser: {{ .Values.edgex.security.runAsUser }}
         runAsGroup: {{ .Values.edgex.security.runAsGroup }}
-{{- end }}
