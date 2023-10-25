@@ -4,8 +4,8 @@
 #
 apiVersion: v1
 name: EdgeX
-version: 3.0.0
-appVersion: minnesota
+version: 3.1.0
+appVersion: napa
 description: A Helm Chart for EdgeX
 keywords:
 - IoT

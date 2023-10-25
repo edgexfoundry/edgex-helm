@@ -46,7 +46,7 @@ This can also be customized as well using the `edgex.security.tlsHost` setting.
 
 ## Quick-start Installation
 
-Install the EdgeX helm chart with a release name edgex-minnesota
+Install the EdgeX helm chart with a release name edgex-napa
 
 You can install the helm chart 1 of 2 ways. 
 1. Install the chart from by cloning the edgex-helm repository
@@ -57,7 +57,7 @@ You can install the helm chart 1 of 2 ways.
 $ git clone https://github.com/edgexfoundry/edgex-helm.git
 $ git checkout v3.0
 $ kubectl create namespace edgex
-$ helm install edgex-minnesota -n edgex .
+$ helm install edgex-napa -n edgex .
 ```
 
 **If you are only interested in installing the helm chart as a standalone:**
@@ -86,12 +86,12 @@ You can now change to the unzipped directory and install the helm chart.
 ```console
 cd helm
 kubectl create namespace edgex
-helm install edgex-minnesota -n edgex .
+helm install edgex-napa -n edgex .
 ```
 ## Uninstallation
 
 ```bash
-helm uninstall edgex-minnesota -n edgex
+helm uninstall edgex-napa -n edgex
 ```
 
 ## Test EdgeX
@@ -201,7 +201,7 @@ If EdgeX was previously installed on security disabled, uninstall the non-securi
 The helm chart is not coded to allow for dynamic switching in and out of secure mode.
 
 ```sh
-helm install edgex-minnesota --set edgex.security.enabled=true -n edgex .
+helm install edgex-napa --set edgex.security.enabled=true -n edgex .
 ```
 
 #### Creating an Authentication JWT in Kubernetes

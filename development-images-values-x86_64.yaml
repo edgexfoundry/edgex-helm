@@ -110,7 +110,7 @@ edgex:
       pullPolicy: Always
     consul:
       repository: hashicorp/consul
-      tag: "1.15"
+      tag: "1.16"
       pullPolicy: Always
     redis:
       repository: redis
@@ -118,11 +118,11 @@ edgex:
       pullPolicy: Always
     ekuiper:
       repository: lfedge/ekuiper
-      tag: "1.9-alpine"
+      tag: "1.11-alpine"
       pullPolicy: Always
     vault:
       repository: hashicorp/vault
-      tag: "1.13"
+      tag: "1.14"
       pullPolicy: Always
     bootstrapper:
       repository: nexus3.edgexfoundry.org:10004/security-bootstrapper
