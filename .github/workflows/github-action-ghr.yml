@@ -19,13 +19,13 @@ jobs:
       - name: tar zip edgex helm
         shell: bash
         run: |
-          (cd $GITHUB_WORKSPACE && tar -czvf edgex-helm.tar.gz .)
+          (cd $GITHUB_WORKSPACE/.. && tar --exclude="*.git*" -czvf edgex-helm.tar.gz edgex-helm)
 
       - name: upload helm tarball release artifact 
         uses: svenstaro/upload-release-action@v2 
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ github.workspace}}/edgex-helm.tar.gz
+          file: ${{ github.workspace}}/../edgex-helm.tar.gz
           asset_name: edgex-helm.tar.gz
           tag: ${{ github.ref }}
           overwrite: true
